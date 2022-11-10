@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  # Laravel側 +++++++++++++++++++++++++++++++++++++++++++++++++
+  laravel-app:
+    container_name: laravel-app
+    build:
+      context: .
+      dockerfile: ./laravel-docker/app/Dockerfile
+    volumes:
+      - ./laravel/:/laravel-app
+  laravel-web:
+    container_name: laravel-web
+    build:
+      context: .
+      dockerfile: ./laravel-docker/web/Dockerfile
+    ports:
+      - 8081:80
+    depends_on:
+      - laravel-app
+    volumes:
+      - ./laravel/:/laravel-app
+  postgresql:
+    container_name: postgresql
+    build: 
+      context: .
+      dockerfile: ./laravel-docker/db/Dockerfile
+    ports:
+      - 5432:5432
+    volumes:
+      - ./laravel-docker/db/init:/docker-entrypoint-initdb.d
+      - postgres_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    restart: always
+volumes:
+  postgres_volume:
