@@ -3,7 +3,7 @@ FROM php:8.0-fpm
 ENV TZ Asia/Tokyo
 
 RUN apt-get update && \
-	apt-get install -y git unzip vim libpq-dev \
+	apt-get install -y git unzip vim libpq-dev nodejs \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
