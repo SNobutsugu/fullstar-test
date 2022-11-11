@@ -6,6 +6,7 @@ SPAのテストサイト
 2. docker exec -it laravel-app bash
 3. php artisan migrate
 4. npm install @vitejs/plugin-vue --save-dev
+   場合によっては、npm install -g npm@9.1.1
 5. npm run dev
 
 ## vite
