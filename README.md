@@ -11,6 +11,11 @@ SPAのテストサイト
 6. npm install react react-dom --save-dev
 7. npm run dev
 
+#### 動かなくなった場合。。。
+プロジェクトディレクトリ内で
+docker-compose down --rmi local 
+
+これで、dockerの停止とimageの削除までしてくれる。
 
 ## vite
 laravel9からデフォルトのビルドツールがWebpack(Laravel Mix)からViteに変更された。
