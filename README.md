@@ -1,5 +1,5 @@
-# spa_test_site
-SPAのテストサイト
+# プロジェクト説明
+FullstarのSPAテスト用サイト
 
 ## 初回起動
 1. docker-compose up -d
@@ -17,7 +17,7 @@ DB_USERNAME=user
 DB_PASSWORD=pass
 ```
 
-6.php artisan key:generate 
+6. php artisan key:generate
 7. php artisan migrate
 8. npm install @vitejs/plugin-vue --save-dev
    場合によっては、npm install -g npm@9.1.1
