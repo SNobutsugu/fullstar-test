@@ -4,12 +4,26 @@ SPAのテストサイト
 ## 初回起動
 1. docker-compose up -d
 2. docker exec -it laravel-app bash
-3. php artisan migrate
-4. npm install @vitejs/plugin-vue --save-dev
+3. composer update
+4. cp .env.example .env
+5. envファイルのDB部分を修正
+
+```
+DB_CONNECTION=pgsql
+DB_HOST=postgresql
+DB_PORT=5432
+DB_DATABASE=spa_test_db
+DB_USERNAME=user
+DB_PASSWORD=pass
+```
+
+6.php artisan key:generate 
+7. php artisan migrate
+8. npm install @vitejs/plugin-vue --save-dev
    場合によっては、npm install -g npm@9.1.1
-5. npm install @vitejs/plugin-react --save-dev
-6. npm install react react-dom --save-dev
-7. npm run dev
+9. npm install @vitejs/plugin-react --save-dev
+10. npm install react react-dom --save-dev
+11. npm run dev
 
 #### 動かなくなった場合。。。
 プロジェクトディレクトリ内で
