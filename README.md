@@ -2,11 +2,16 @@
 FullstarのSPAテスト用サイト
 
 ## 初回起動
-1. docker-compose up -d
-2. docker exec -it laravel-app bash
-3. composer update
-4. cp .env.example .env
-5. envファイルのDB部分を修正
+1. docker-compose build
+2. docker-compose up -d
+3. docker-compose exec web rails db:create
+4. railsにアクセス
+   railsの画面が出ればOK
+　　localhost:3000
+5. docker exec -it laravel-app bash
+6. composer update
+7. cp .env.example .env
+8. envファイルのDB部分を修正
 
 ```
 DB_CONNECTION=pgsql

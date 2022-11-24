@@ -21,7 +21,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: user
-# 以下２行を編集
   password: pass
   host: ruby-db
 development:
