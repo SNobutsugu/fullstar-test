@@ -36,5 +36,24 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
     restart: always
+  # Laravel側 +++++++++++++++++++++++++++++++++++++++++++++++++
+  ruby-db:
+    image: postgres
+    container_name: ruby-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+  ruby-app-web:
+    container_name: ruby-app
+    build:
+      context: .
+      dockerfile: ./ruby-docker/app/Dockerfile
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - ./ruby-app:/ruby-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - ruby-db
 volumes:
   postgres_volume:
