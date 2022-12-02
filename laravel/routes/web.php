@@ -22,3 +22,7 @@ Route::get('/react', function () {
 Route::get('/vue', function () {
     return view('vue');
 });
+Route::get('/vue/{any}', function () {
+    // さっき作成した「app.blade.php」から拡張子を除いた「app」をviewに記載
+    return view('vue');
+})->where('any', '.*');

@@ -36,6 +36,9 @@ docker-compose down --rmi local
 
 これで、dockerの停止とimageの削除までしてくれる。
 
+## vue-route
+https://qiita.com/Hoi-hoi/items/96705df38cb7ddcfca1d
+
 ## vite
 laravel9からデフォルトのビルドツールがWebpack(Laravel Mix)からViteに変更された。
 せっかくなのでそっち使ってみる。

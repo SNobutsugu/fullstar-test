@@ -1,9 +1,10 @@
-<script setup>
-import Counter from "./Counter.vue";
-
-</script>
-
 <template>
-    <h1>Hello Vue</h1>
-    <Counter />
+    <router-view></router-view>
 </template>
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+    setup() {
+    }
+})
+</script>
