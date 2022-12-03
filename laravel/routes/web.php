@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/react', function () {
-    return view('react');
-});
 Route::get('/vue', function () {
     return view('vue');
 });
@@ -26,3 +23,9 @@ Route::get('/vue/{any}', function () {
     // さっき作成した「app.blade.php」から拡張子を除いた「app」をviewに記載
     return view('vue');
 })->where('any', '.*');
+Route::get('/react', function () {
+    return view('react');
+});
+Route::get('/react/{any}', function () {
+    return view('react');
+});

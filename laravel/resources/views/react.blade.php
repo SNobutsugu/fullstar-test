@@ -10,5 +10,14 @@
 </head>
 <body>
 <div id="app"></div>
+<div>
+    <a href="{{ url('/react/one') }}"> One </a>
+</div>
+<div>
+    <a href="{{ url('/react/two') }}"> Two </a>
+</div>
+<div>
+    <a href="{{ url('/') }}"> Topに戻る </a>
+</div>
 </body>
 </html>
