@@ -7,7 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-require('../hello_vue')
+require('../vue/main')
+require('../vue/App')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
